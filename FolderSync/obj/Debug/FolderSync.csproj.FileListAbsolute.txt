@@ -1,0 +1,8 @@
+E:\REM_Visual_Studio\FolderSync\FolderSync\bin\Debug\FolderSync.exe.config
+E:\REM_Visual_Studio\FolderSync\FolderSync\bin\Debug\FolderSync.exe
+E:\REM_Visual_Studio\FolderSync\FolderSync\bin\Debug\FolderSync.pdb
+E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.Form1.resources
+E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.Properties.Resources.resources
+E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.csproj.GenerateResource.Cache
+E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.exe
+E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.pdb
