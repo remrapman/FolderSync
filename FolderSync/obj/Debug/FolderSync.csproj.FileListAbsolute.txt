@@ -6,3 +6,13 @@ E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.Properties.Resou
 E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.csproj.GenerateResource.Cache
 E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.exe
 E:\REM_Visual_Studio\FolderSync\FolderSync\obj\Debug\FolderSync.pdb
+D:\VS_projects\folderSyncForm\FolderSync\bin\Debug\FolderSync.exe.config
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.exe
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.pdb
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.Form1.resources
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.Properties.Resources.resources
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.csproj.GenerateResource.Cache
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.FiltersUserControl.resources
+D:\VS_projects\folderSyncForm\FolderSync\bin\Debug\FolderSync.exe
+D:\VS_projects\folderSyncForm\FolderSync\bin\Debug\FolderSync.pdb
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.BrowseFolderUserControl.resources
