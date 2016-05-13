@@ -1,0 +1,7 @@
+D:\VS_projects\folderSyncForm\FolderSync\bin\x64\Debug\FolderSync.exe.config
+D:\VS_projects\folderSyncForm\FolderSync\obj\x64\Debug\FolderSync.BrowseFolderUserControl.resources
+D:\VS_projects\folderSyncForm\FolderSync\obj\x64\Debug\FolderSync.FiltersUserControl.resources
+D:\VS_projects\folderSyncForm\FolderSync\obj\x64\Debug\FolderSync.Form1.resources
+D:\VS_projects\folderSyncForm\FolderSync\obj\x64\Debug\FolderSync.Properties.Resources.resources
+D:\VS_projects\folderSyncForm\FolderSync\obj\x64\Debug\FolderSync.csproj.GenerateResource.Cache
+D:\C#\folderSyncForm\folderSyncForm\FolderSync\bin\x64\Debug\FolderSync.exe.config

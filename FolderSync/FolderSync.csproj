@@ -31,7 +31,33 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Synchronization, Version=2.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Synchronization.Files, Version=2.1.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,16 +70,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrowseFolderUserControl.cs">
+    <Compile Include="Controller\BrowseFolderUserControlController.cs" />
+    <Compile Include="Controller\FilterUserControlController.cs" />
+    <Compile Include="Controller\IBrowseFolderUserControlController.cs" />
+    <Compile Include="Controller\IFilterUserControlController.cs" />
+    <Compile Include="DoSync.cs" />
+    <Compile Include="View\BrowseFolderUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BrowseFolderUserControl.Designer.cs">
+    <Compile Include="View\BrowseFolderUserControl.Designer.cs">
       <DependentUpon>BrowseFolderUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="FiltersUserControl.cs">
+    <Compile Include="CompareFolders.cs" />
+    <Compile Include="View\FiltersUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FiltersUserControl.Designer.cs">
+    <Compile Include="View\FiltersUserControl.Designer.cs">
       <DependentUpon>FiltersUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -62,13 +94,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\IBrowseFolderUserControl.cs" />
+    <Compile Include="View\IFilterUserControl.cs" />
+    <Compile Include="IFolderDifference.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReaderWritter.cs" />
-    <EmbeddedResource Include="BrowseFolderUserControl.resx">
+    <Compile Include="UnitTest.cs" />
+    <EmbeddedResource Include="View\BrowseFolderUserControl.resx">
       <DependentUpon>BrowseFolderUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FiltersUserControl.resx">
+    <EmbeddedResource Include="View\FiltersUserControl.resx">
       <DependentUpon>FiltersUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -97,9 +133,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
     <Folder Include="Model\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

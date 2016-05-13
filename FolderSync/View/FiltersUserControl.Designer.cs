@@ -28,27 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.itemAddedToFilterTextBox = new System.Windows.Forms.TextBox();
             this.addNewItemButton = new System.Windows.Forms.Button();
             this.filterListBox = new System.Windows.Forms.ListBox();
             this.newItemLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // itemAddedToFilterTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(284, 20);
-            this.textBox1.TabIndex = 0;
+            this.itemAddedToFilterTextBox.Location = new System.Drawing.Point(78, 20);
+            this.itemAddedToFilterTextBox.Name = "itemAddedToFilterTextBox";
+            this.itemAddedToFilterTextBox.Size = new System.Drawing.Size(284, 20);
+            this.itemAddedToFilterTextBox.TabIndex = 0;
+            this.itemAddedToFilterTextBox.TextChanged += new System.EventHandler(this.newFilterItemTextBox_TextChanged);
             // 
             // addNewItemButton
             // 
+            this.addNewItemButton.Enabled = false;
             this.addNewItemButton.Location = new System.Drawing.Point(369, 18);
             this.addNewItemButton.Name = "addNewItemButton";
             this.addNewItemButton.Size = new System.Drawing.Size(28, 23);
             this.addNewItemButton.TabIndex = 1;
             this.addNewItemButton.Text = "+";
             this.addNewItemButton.UseVisualStyleBackColor = true;
+            this.addNewItemButton.EnabledChanged += new System.EventHandler(this.newFilterItemTextBox_TextChanged);
+            this.addNewItemButton.Click += new System.EventHandler(this.addNewItemButton_Click);
             // 
             // filterListBox
             // 
@@ -74,7 +78,7 @@
             this.Controls.Add(this.newItemLabel);
             this.Controls.Add(this.filterListBox);
             this.Controls.Add(this.addNewItemButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.itemAddedToFilterTextBox);
             this.Name = "FiltersUserControl";
             this.Size = new System.Drawing.Size(417, 473);
             this.ResumeLayout(false);
@@ -84,7 +88,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox itemAddedToFilterTextBox;
         private System.Windows.Forms.Button addNewItemButton;
         private System.Windows.Forms.ListBox filterListBox;
         private System.Windows.Forms.Label newItemLabel;

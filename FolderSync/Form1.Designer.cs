@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.SyncSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            this.browseFolderUserControl2 = new FolderSync.BrowseFolderUserControl();
+            this.browseFolderUserControl1 = new FolderSync.BrowseFolderUserControl();
             this.CancelButton = new System.Windows.Forms.Button();
             this.ActionTypeLabel = new System.Windows.Forms.Label();
             this.SyncFolderButton = new System.Windows.Forms.Button();
@@ -37,23 +39,21 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.actionsLabel = new System.Windows.Forms.Label();
+            this.actionsListBox = new System.Windows.Forms.ListBox();
+            this.foldersDifferenceGroupBox = new System.Windows.Forms.GroupBox();
+            this.rightFolderListBox = new System.Windows.Forms.ListBox();
+            this.leftFolderListBox = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.includeFilterLabel = new System.Windows.Forms.Label();
             this.excludeFilterLabel = new System.Windows.Forms.Label();
+            this.includeFilterLabel = new System.Windows.Forms.Label();
             this.filtersUserControl2 = new FolderSync.FiltersUserControl();
             this.filtersUserControl1 = new FolderSync.FiltersUserControl();
-            this.browseFolderUserControl1 = new FolderSync.BrowseFolderUserControl();
-            this.browseFolderUserControl2 = new FolderSync.BrowseFolderUserControl();
-            this.foldersDifferenceGroupBox = new System.Windows.Forms.GroupBox();
-            this.actionsListBox = new System.Windows.Forms.ListBox();
-            this.leftFolderListBox = new System.Windows.Forms.ListBox();
-            this.actionsLabel = new System.Windows.Forms.Label();
-            this.rightFolderListBox = new System.Windows.Forms.ListBox();
             this.SyncSettingsGroupBox.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.foldersDifferenceGroupBox.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // SyncSettingsGroupBox
@@ -71,6 +71,22 @@
             this.SyncSettingsGroupBox.TabIndex = 0;
             this.SyncSettingsGroupBox.TabStop = false;
             this.SyncSettingsGroupBox.Text = "Sync Setting";
+            // 
+            // browseFolderUserControl2
+            // 
+            this.browseFolderUserControl2.folderPath = null;
+            this.browseFolderUserControl2.Location = new System.Drawing.Point(470, 20);
+            this.browseFolderUserControl2.Name = "browseFolderUserControl2";
+            this.browseFolderUserControl2.Size = new System.Drawing.Size(440, 60);
+            this.browseFolderUserControl2.TabIndex = 11;
+            // 
+            // browseFolderUserControl1
+            // 
+            this.browseFolderUserControl1.folderPath = null;
+            this.browseFolderUserControl1.Location = new System.Drawing.Point(7, 20);
+            this.browseFolderUserControl1.Name = "browseFolderUserControl1";
+            this.browseFolderUserControl1.Size = new System.Drawing.Size(440, 60);
+            this.browseFolderUserControl1.TabIndex = 10;
             // 
             // CancelButton
             // 
@@ -98,6 +114,7 @@
             this.SyncFolderButton.TabIndex = 5;
             this.SyncFolderButton.Text = "Sync Folders";
             this.SyncFolderButton.UseVisualStyleBackColor = true;
+            this.SyncFolderButton.Click += new System.EventHandler(this.SyncFolderButton_Click);
             // 
             // AnalizeButton
             // 
@@ -107,6 +124,7 @@
             this.AnalizeButton.TabIndex = 3;
             this.AnalizeButton.Text = "Analize";
             this.AnalizeButton.UseVisualStyleBackColor = true;
+            this.AnalizeButton.Click += new System.EventHandler(this.AnalizeButton_Click);
             // 
             // ActionTypesComboBox
             // 
@@ -146,6 +164,51 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // actionsLabel
+            // 
+            this.actionsLabel.AutoSize = true;
+            this.actionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.actionsLabel.Location = new System.Drawing.Point(11, 467);
+            this.actionsLabel.Name = "actionsLabel";
+            this.actionsLabel.Size = new System.Drawing.Size(49, 15);
+            this.actionsLabel.TabIndex = 3;
+            this.actionsLabel.Text = "Actions:";
+            // 
+            // actionsListBox
+            // 
+            this.actionsListBox.FormattingEnabled = true;
+            this.actionsListBox.Location = new System.Drawing.Point(10, 485);
+            this.actionsListBox.Name = "actionsListBox";
+            this.actionsListBox.Size = new System.Drawing.Size(903, 134);
+            this.actionsListBox.TabIndex = 2;
+            // 
+            // foldersDifferenceGroupBox
+            // 
+            this.foldersDifferenceGroupBox.Controls.Add(this.rightFolderListBox);
+            this.foldersDifferenceGroupBox.Controls.Add(this.leftFolderListBox);
+            this.foldersDifferenceGroupBox.Location = new System.Drawing.Point(7, 216);
+            this.foldersDifferenceGroupBox.Name = "foldersDifferenceGroupBox";
+            this.foldersDifferenceGroupBox.Size = new System.Drawing.Size(912, 237);
+            this.foldersDifferenceGroupBox.TabIndex = 1;
+            this.foldersDifferenceGroupBox.TabStop = false;
+            this.foldersDifferenceGroupBox.Text = "Folders Difference:";
+            // 
+            // rightFolderListBox
+            // 
+            this.rightFolderListBox.FormattingEnabled = true;
+            this.rightFolderListBox.Location = new System.Drawing.Point(466, 19);
+            this.rightFolderListBox.Name = "rightFolderListBox";
+            this.rightFolderListBox.Size = new System.Drawing.Size(440, 212);
+            this.rightFolderListBox.TabIndex = 0;
+            // 
+            // leftFolderListBox
+            // 
+            this.leftFolderListBox.FormattingEnabled = true;
+            this.leftFolderListBox.Location = new System.Drawing.Point(7, 20);
+            this.leftFolderListBox.Name = "leftFolderListBox";
+            this.leftFolderListBox.Size = new System.Drawing.Size(436, 212);
+            this.leftFolderListBox.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.excludeFilterLabel);
@@ -160,16 +223,6 @@
             this.tabPage2.Text = "Filters";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // includeFilterLabel
-            // 
-            this.includeFilterLabel.AutoSize = true;
-            this.includeFilterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.includeFilterLabel.Location = new System.Drawing.Point(30, 11);
-            this.includeFilterLabel.Name = "includeFilterLabel";
-            this.includeFilterLabel.Size = new System.Drawing.Size(94, 18);
-            this.includeFilterLabel.TabIndex = 0;
-            this.includeFilterLabel.Text = "Include Filter:";
-            // 
             // excludeFilterLabel
             // 
             this.excludeFilterLabel.AutoSize = true;
@@ -180,8 +233,19 @@
             this.excludeFilterLabel.TabIndex = 3;
             this.excludeFilterLabel.Text = "Exclude Filter:";
             // 
+            // includeFilterLabel
+            // 
+            this.includeFilterLabel.AutoSize = true;
+            this.includeFilterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.includeFilterLabel.Location = new System.Drawing.Point(30, 11);
+            this.includeFilterLabel.Name = "includeFilterLabel";
+            this.includeFilterLabel.Size = new System.Drawing.Size(94, 18);
+            this.includeFilterLabel.TabIndex = 0;
+            this.includeFilterLabel.Text = "Include Filter:";
+            // 
             // filtersUserControl2
             // 
+            this.filtersUserControl2.FilterItems = null;
             this.filtersUserControl2.Location = new System.Drawing.Point(492, 39);
             this.filtersUserControl2.Name = "filtersUserControl2";
             this.filtersUserControl2.Size = new System.Drawing.Size(417, 473);
@@ -189,69 +253,11 @@
             // 
             // filtersUserControl1
             // 
+            this.filtersUserControl1.FilterItems = null;
             this.filtersUserControl1.Location = new System.Drawing.Point(10, 39);
             this.filtersUserControl1.Name = "filtersUserControl1";
             this.filtersUserControl1.Size = new System.Drawing.Size(417, 483);
             this.filtersUserControl1.TabIndex = 1;
-            // 
-            // browseFolderUserControl1
-            // 
-            this.browseFolderUserControl1.Location = new System.Drawing.Point(7, 20);
-            this.browseFolderUserControl1.Name = "browseFolderUserControl1";
-            this.browseFolderUserControl1.Size = new System.Drawing.Size(440, 60);
-            this.browseFolderUserControl1.TabIndex = 10;
-            // 
-            // browseFolderUserControl2
-            // 
-            this.browseFolderUserControl2.Location = new System.Drawing.Point(470, 20);
-            this.browseFolderUserControl2.Name = "browseFolderUserControl2";
-            this.browseFolderUserControl2.Size = new System.Drawing.Size(440, 60);
-            this.browseFolderUserControl2.TabIndex = 11;
-            // 
-            // foldersDifferenceGroupBox
-            // 
-            this.foldersDifferenceGroupBox.Controls.Add(this.rightFolderListBox);
-            this.foldersDifferenceGroupBox.Controls.Add(this.leftFolderListBox);
-            this.foldersDifferenceGroupBox.Location = new System.Drawing.Point(7, 216);
-            this.foldersDifferenceGroupBox.Name = "foldersDifferenceGroupBox";
-            this.foldersDifferenceGroupBox.Size = new System.Drawing.Size(912, 237);
-            this.foldersDifferenceGroupBox.TabIndex = 1;
-            this.foldersDifferenceGroupBox.TabStop = false;
-            this.foldersDifferenceGroupBox.Text = "Folders Difference:";
-            // 
-            // actionsListBox
-            // 
-            this.actionsListBox.FormattingEnabled = true;
-            this.actionsListBox.Location = new System.Drawing.Point(10, 485);
-            this.actionsListBox.Name = "actionsListBox";
-            this.actionsListBox.Size = new System.Drawing.Size(903, 134);
-            this.actionsListBox.TabIndex = 2;
-            // 
-            // leftFolderListBox
-            // 
-            this.leftFolderListBox.FormattingEnabled = true;
-            this.leftFolderListBox.Location = new System.Drawing.Point(7, 20);
-            this.leftFolderListBox.Name = "leftFolderListBox";
-            this.leftFolderListBox.Size = new System.Drawing.Size(436, 212);
-            this.leftFolderListBox.TabIndex = 0;
-            // 
-            // actionsLabel
-            // 
-            this.actionsLabel.AutoSize = true;
-            this.actionsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.actionsLabel.Location = new System.Drawing.Point(11, 467);
-            this.actionsLabel.Name = "actionsLabel";
-            this.actionsLabel.Size = new System.Drawing.Size(49, 15);
-            this.actionsLabel.TabIndex = 3;
-            this.actionsLabel.Text = "Actions:";
-            // 
-            // rightFolderListBox
-            // 
-            this.rightFolderListBox.FormattingEnabled = true;
-            this.rightFolderListBox.Location = new System.Drawing.Point(466, 19);
-            this.rightFolderListBox.Name = "rightFolderListBox";
-            this.rightFolderListBox.Size = new System.Drawing.Size(440, 212);
-            this.rightFolderListBox.TabIndex = 0;
             // 
             // Form1
             // 
@@ -261,15 +267,15 @@
             this.Controls.Add(this.tabControl);
             this.Name = "Form1";
             this.Text = "REM - Sync Folder";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            //this.Load -= new System.EventHandler(this.Form1_Load);
             this.SyncSettingsGroupBox.ResumeLayout(false);
             this.SyncSettingsGroupBox.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.foldersDifferenceGroupBox.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.foldersDifferenceGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -56,9 +56,9 @@
             this.browseFolderLlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.browseFolderLlabel.Location = new System.Drawing.Point(3, 13);
             this.browseFolderLlabel.Name = "browseFolderLlabel";
-            this.browseFolderLlabel.Size = new System.Drawing.Size(86, 16);
+            this.browseFolderLlabel.Size = new System.Drawing.Size(91, 16);
             this.browseFolderLlabel.TabIndex = 2;
-            this.browseFolderLlabel.Text = "Select Filder:";
+            this.browseFolderLlabel.Text = "Select Folder:";
             // 
             // BrowseFolderUserControl
             // 

@@ -16,3 +16,5 @@ D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.FiltersUserControl
 D:\VS_projects\folderSyncForm\FolderSync\bin\Debug\FolderSync.exe
 D:\VS_projects\folderSyncForm\FolderSync\bin\Debug\FolderSync.pdb
 D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.BrowseFolderUserControl.resources
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.csprojResolveAssemblyReference.cache
+D:\VS_projects\folderSyncForm\FolderSync\obj\Debug\FolderSync.View.BrowseFolderUserControl.resources
